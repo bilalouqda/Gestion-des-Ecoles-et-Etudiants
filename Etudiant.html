@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Ecoles et Etudiants</title>
+    <link rel="stylesheet" href="Style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Gestion des Ecoles et Etudiants</h1>
+        <form id="AddEcole">
+            <h2>Ajouter une Ecole</h2>
+            <label for="ecoleName">Nom de l'Ecole :</label>
+            <input type="text" id="ecoleName" required>
+            <button type="submit">Ajouter l'Ecole</button>
+        </form>
+        
+        <!-- style="display: none;" -->
+        <form id="AddEtudiant">
+            <h2>Ajouter un Etudiant</h2>
+            <label for="etudiantNom">Nom :</label>
+            <input type="text" id="etudiantNom" required>
+
+            <label for="etudiantPrenom">Prénom :</label>
+            <input type="text" id="etudiantPrenom" required>
+
+            <label for="ecoleSelect">Ecole :</label>
+            <select id="ecoleSelect" required></select>
+
+            <button type="submit">Ajouter l'Etudiant</button>
+        </form>
+
+        <table id="studentsTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Ecole</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Les étudiants ajoutés apparaîtront ici -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
+</body>
+</html>
