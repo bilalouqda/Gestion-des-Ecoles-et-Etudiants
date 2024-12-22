@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
-    
+document.addEventListener('DOMContentLoaded', function () {    
 let ecoleCounter = 0;
 let studentCounter = 1;
 
@@ -10,15 +9,12 @@ const etudiantNomInput = document.getElementById('etudiantNom');
 const etudiantPrenomInput = document.getElementById('etudiantPrenom');
 const ecoleSelect = document.getElementById('ecoleSelect');
 const studentsTableBody = document.getElementById('studentsTable').querySelector('tbody');
+studentsTableBody.innerHTML = localStorage.getItem('studentsTableBody');
 
 formAddEcole.addEventListener('submit', function (event) {
     event.preventDefault();
 
     const ecoleName = ecoleNameInput.value;
-    // console.log(ecoleName1);
-    
-    // const ecoleName = ecoleNameInput.value.trim();
-    // console.log(ecoleName);
     
     if (ecoleName) {
         const option = document.createElement('option');
@@ -30,7 +26,6 @@ formAddEcole.addEventListener('submit', function (event) {
             formAddEtudiant.style.display = 'block';
         }
 
-        // Réinitialiser le champ texte
         ecoleNameInput.value = '';
     }
 });
@@ -49,14 +44,25 @@ formAddEtudiant.addEventListener('submit', function (event) {
             <td>${etudiantNom}</td>
             <td>${etudiantPrenom}</td>
             <td>${ecoleSelected}</td>
+            <td><button id="delete" style="background-color: red;">Delete</button></td>
         `;
+        console.log(row);
+
+        const deleteButton = row.querySelector('button');
+
+        deleteButton.addEventListener('click', function () {
+            row.remove();
+        });
 
         studentsTableBody.appendChild(row);
 
-        // Réinitialiser le formulaire
         etudiantNomInput.value = '';
         etudiantPrenomInput.value = '';
         ecoleSelect.selectedIndex = 0;
     }
+
+    localStorage.setItem('studentsTableBody', studentsTableBody.innerHTML);
+    
 });
+
 });

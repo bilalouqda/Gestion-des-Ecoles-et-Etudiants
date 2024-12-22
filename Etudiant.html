@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion des Ecoles et Etudiants</title>
     <link rel="stylesheet" href="Style.css">
-    <script src="script.js"></script>
 </head>
 <body>
     <div class="container">
@@ -17,8 +16,7 @@
             <button type="submit">Ajouter l'Ecole</button>
         </form>
         
-        <!-- style="display: none;" -->
-        <form id="AddEtudiant">
+        <form id="AddEtudiant"  style="display: none;">
             <h2>Ajouter un Etudiant</h2>
             <label for="etudiantNom">Nom :</label>
             <input type="text" id="etudiantNom" required>
@@ -39,15 +37,15 @@
                     <th>Nom</th>
                     <th>Prénom</th>
                     <th>Ecole</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Les étudiants ajoutés apparaîtront ici -->
             </tbody>
         </table>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
-
 </body>
 </html>
